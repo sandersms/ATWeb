@@ -158,6 +158,36 @@
             opacity: 0.6;              /* Slightly see-through to look disabled */
         }
 
+        .item-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item-list li {
+            padding: 0.625rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .item-list li:last-child {
+            border-bottom: none;
+        }
+
+        .item-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.15s ease;
+        }
+
+        .item-link:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }        
+
         .contact-box {
             background: rgba(59, 130, 246, 0.05);
             border: 1px solid rgba(59, 130, 246, 0.2);
@@ -211,8 +241,22 @@
                 <div>
                     <div class="security-item-title">Vulnerability Monitoring</div>
                     <div class="security-item-desc">Monitoring for CVE vulnerabilities, Exploits, and Patches/Fixes</div>
+                 <ul class="item-list">
+                    <li>
+                        <a href="cveexplorer.html" class="item-link">Vulnerability Summary Explorer</a>
+                        <div class="security-item-desc">Examine weekly vulnerability reports from CISA.</div>
+                    </li>
+                    <li>
+                        <a href="/vulnerabilities/exploited" class="item-link">Exploited Vulnerability Summary</a>
+                        <div class="security-item-desc">View currently exploited CVEs active in the wild and known threat vector lists.</div>
+                    </li>
+                    <li>
+                        <a href="/alerts/dsa" class="item-link">DSA Alerts</a>
+                     <div class="security-item-desc">Debian Security Advisory and real-time distribution patch alerts.</div>
+                    </li>
+                </ul>
                 </div>
-                <span class="badge-active">Available</span>
+               <span class="badge-active">Available</span>
             </li>
             <li class="security-item">
                 <div>
@@ -237,7 +281,7 @@
     </div>
 
     <div class="footer">
-        <span>Node ID: <strong>ATG-NODE-01</strong></span>
+        <span>Node ID: <strong>ATG-SEC-01</strong></span>
         <span>Advanced Technology Security</span>
     </div>
 </div>
