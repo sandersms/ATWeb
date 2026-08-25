@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security & Infrastructure - Advanced Technologies Group</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(22, 30, 46, 0.7);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --primary: #3b82f6;
+            --accent: #06b6d4;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .title-area h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .title-area p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .content h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .content p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .security-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .security-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .security-item-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .security-item-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .badge-active {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-inactive {
+            background-color: #6c757d; /* Muted gray background */
+            color: #ffffff;            /* White text */
+            padding: 4px 8px;          /* Padding around text */
+            border-radius: 4px;        /* Rounded corners */
+            font-size: 12px;           /* Small text size */
+            display: inline-block;     /* Keeps it inline with text */
+            opacity: 0.6;              /* Slightly see-through to look disabled */
+        }
+
+        .contact-box {
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+
+        .contact-box h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .contact-box p {
+            margin-bottom: 0;
+            font-size: 0.875rem;
+        }
+
+        .footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo-group">
+            <div class="icon">SEC</div>
+            <div class="title-area">
+                <h1>Security Center</h1>
+                <p>Advanced Technologies Group</p>
+            </div>
+        </div>
+        <a href="/" class="back-link">&larr; Return Home</a>
+    </div>
+
+    <div class="content">
+        <h2>Security Tools</h2>
+        <p>This provides a set of tools for monitoring security issues, security testing, automated threat mitigation, and security solution prototyping.</p>
+
+        <ul class="security-list">
+            <li class="security-item">
+                <div>
+                    <div class="security-item-title">Vulnerability Monitoring</div>
+                    <div class="security-item-desc">Monitoring for CVE vulnerabilities, Exploits, and Patches/Fixes</div>
+                </div>
+                <span class="badge-active">Available</span>
+            </li>
+            <li class="security-item">
+                <div>
+                    <div class="security-item-title">Security Testing</div>
+                    <div class="security-item-desc">Placeholder for Security Testing Access and Status</div>
+                </div>
+                <span class="badge-inactive">Pending</span>
+            </li>
+            <li class="security-item">
+                <div>
+                    <div class="security-item-title">Security Prototyping</div>
+                    <div class="security-item-desc">Placeholder for Security Prototyping</div>
+                </div>
+                <span class="badge-inactive">Pending</span>
+            </li>
+        </ul>
+
+        <div class="contact-box">
+            <h3>Vulnerability Reporting</h3>
+            <p>If you identify a potential security issue on this node, please report it immediately to <strong>security@advancedtech.group</strong>. Do not publicly disclose vulnerabilities before resolution.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span>Node ID: <strong>ATG-NODE-01</strong></span>
+        <span>Advanced Technology Security</span>
+    </div>
+</div>
+
+</body>
+</html>
